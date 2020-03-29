@@ -1,0 +1,20 @@
+@import '~taro-ui/dist/style/components/flex.scss';
+.header {
+  height: 128px;
+  background: #8b2708;
+}
+.profile {
+  margin: -16px 16px 16px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+.card {
+  margin: 16px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}

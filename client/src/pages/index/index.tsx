@@ -1,8 +1,11 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View } from '@tarojs/components'
+import { AtTabBar } from 'taro-ui'
+
 import './index.scss'
 
-import Login from '../../components/login/index.weapp'
+import Home from './../subpages/home'
+import Me from './../subpages/me'
 
 export default class Index extends Component {
   /**
@@ -13,23 +16,55 @@ export default class Index extends Component {
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
   config: Config = {
-    navigationBarTitleText: '首页'
+    navigationBarTitleText: 'i新闻'
   }
 
-  componentWillMount() {}
+  state = {
+    current: 0
+  }
 
-  componentDidMount() {}
+  onShareAppMessage() {
+    return {
+      title: 'i新闻',
+      desc: 'Taro 开源微信新闻小程序',
+      path: '/pages/index/index'
+    }
+  }
 
-  componentWillUnmount() {}
-
-  componentDidShow() {}
-
-  componentDidHide() {}
+  handleClick(value) {
+    if (value == 1) {
+    }
+    switch (value) {
+      case 0:
+        Taro.setNavigationBarTitle({
+          title: 'i新闻'
+        })
+        break
+      case 1:
+        Taro.setNavigationBarTitle({
+          title: '我的'
+        })
+        break
+    }
+    this.setState({
+      current: value
+    })
+  }
 
   render() {
     return (
-      <View className="container">
-        <Login />
+      <View className="container" style="position:relative;">
+        {this.state.current == 0 ? <Home /> : <Me />}
+        <View className="fixHideContent"></View>
+        <AtTabBar
+          fixed
+          tabList={[
+            { title: 'i新闻', iconType: 'bullet-list' },
+            { title: '我的', iconType: 'user' }
+          ]}
+          current={this.state.current}
+          onClick={this.handleClick.bind(this)}
+        />
       </View>
     )
   }

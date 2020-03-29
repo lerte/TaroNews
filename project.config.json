@@ -1,12 +1,12 @@
 {
-	"miniprogramRoot": "client/dist/",
+	"miniprogramRoot": "client/dist/weapp/",
 	"cloudfunctionRoot": "cloud/functions/",
 	"projectname": "iNews",
 	"description": "",
 	"appid": "wx00b9e8362cbdcd08",
 	"setting": {
-		"urlCheck": true,
-		"es6": false,
+		"urlCheck": false,
+		"es6": true,
 		"postcss": false,
 		"minified": false,
 		"newFeature": true,
@@ -26,5 +26,29 @@
 	"compileType": "miniprogram",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
-	"condition": {}
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": []
+		}
+	}
 }
