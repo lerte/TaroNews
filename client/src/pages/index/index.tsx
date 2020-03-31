@@ -32,8 +32,6 @@ export default class Index extends Component {
   }
 
   handleClick(value) {
-    if (value == 1) {
-    }
     switch (value) {
       case 0:
         Taro.setNavigationBarTitle({
