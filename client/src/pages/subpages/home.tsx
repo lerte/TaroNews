@@ -97,7 +97,8 @@ export default class Home extends Component {
   }
   async getNews(url) {
     this.setState({
-      loading: true
+      loading: true,
+      news: []
     })
     const { result } = await Taro.cloud.callFunction({
       name: 'getNews',
